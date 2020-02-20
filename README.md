@@ -5,7 +5,7 @@ bwm and bwg coming soon!
 
 ## bdc
 bloated discord client
-(/images/wrapper_satus.png)
+![bdc](/images/wrapper_satus.png)
 
 usage:
 
@@ -23,6 +23,7 @@ installing packages: ``baw install <package name>``
 
 ## bsh
 bloated shell
+![bsh](/images/bsh.png)
 
 
 usage:
