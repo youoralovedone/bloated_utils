@@ -5,6 +5,7 @@ bwm and bwg coming soon!
 
 ## bdc
 bloated discord client
+![status](/images/wrapper_satus.png)
 
 usage:
 
