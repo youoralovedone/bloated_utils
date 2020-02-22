@@ -1,5 +1,3 @@
-# alt token: NjYxODU2NDg0MTUzMzYwNDI0.Xgxf9w.dT5AiG088qBSP2MzkxEKbqWuSqg
-# main token: MjQ0MTc3NDUyNTAxMzAzMjk2.XkLiVw.l0RprUrngz4P5fdwn1nv-2hwKrM
 # couch-talk id: 679470283714854915
 
 # bdc - bloated discord client
