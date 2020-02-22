@@ -8,7 +8,8 @@ bloated discord client
 ![bdc](/images/wrapper_satus.png)
 
 ** v2 is updated to fix on_ready bug, its super ghetto tho
->>>https://github.com/Rapptz/discord.py/issues/2567
+
+https://github.com/Rapptz/discord.py/issues/2567
 
 usage:
 
