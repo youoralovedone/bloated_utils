@@ -4,7 +4,7 @@ def bsh_loop():
     print("bsh: bloated shell, written by null during study hall")
     status = 1
     while(status):
-        print("bsh_lite?> ", end="")
+        print("[{}]? ".format(os.getcwd()), end="")
         args = input().split()
         status = bsh_exec(args)
 def bsh_start(args):
