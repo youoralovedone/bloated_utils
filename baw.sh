@@ -11,6 +11,7 @@ if [ $1 = "install" ]; then
         cd $AUR_SHIT_DIR
         [ -e $AUR_SHIT_DIR/$arg ] && rm -Rf $AUR_SHIT_DIR/$arg
         git clone https://aur.archlinux.org/$arg.git >/dev/null 2>&1 && echo "OK: git clone into $AUR_SHIT_DIR succesful, created $arg dir" || echo "ERROR: git clone of $arg directory FAILED"
-        makepkg -sic $AUR_SHIT_DIR/$arg/PKGBUILD && echo "OK: installed package $arg" || echo "ERROR: makepkg FAILED, $arg not installed"
+        cd $AUR_SHIT_DIR/$arg/
+        makepkg -sic PKGBUILD && echo "OK: installed package $arg" || echo "ERROR: makepkg FAILED, $arg not installed"
     done
 fi
