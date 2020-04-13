@@ -40,4 +40,5 @@ bloated game downloader
 
 
 usage:
+``python3 bgd.py``
 follow the prompts
