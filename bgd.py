@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import transmissionrpc
 
 query_url = "https://pcgamestorrents.com/?s="
-print("welcome to bgd, you could just use your browser like a normal person you autistic fuck")
+print("welcome to bgd, you could just use your browser like a normal person you")
 query_url += input("name of game (space separated): ").replace(" ", "+")
 
 print("scraping " + query_url + " ...")
@@ -35,4 +35,4 @@ tc = transmissionrpc.Client('localhost', port=9091)
 print("adding torrent " + torrent_url)
 tc.add_torrent(torrent_url)
 print("torrent started ... eta: " + tc.get_torrent(1).eta)
-exit("imagine paying for shit, fuck capitalism")
+exit("imagine paying for shit, ")
