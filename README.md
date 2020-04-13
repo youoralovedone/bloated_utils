@@ -40,7 +40,7 @@ just a shell, piping and tab completion coming soon
 
 ## bgd
 bloated game downloader
-![bgd](/images/bgd.png)
+![bgd](/images/bdg.png)
 
 
 usage:
