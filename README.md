@@ -2,6 +2,7 @@
 a collection of shitty utilities i write in study hall
 
 installation for any of these tools is as simple as wget-ing the raw!
+
 ``wget https://raw.githubusercontent.com/youoralovedone/bloated_utils/master/<filename>``
 
 bwm coming soon
