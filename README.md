@@ -1,7 +1,10 @@
 # bloated_utils
 a collection of shitty utilities i write in study hall
 
-bwm and bwg coming soon!
+installation for any of these tools is as simple as wget-ing the raw!
+``wget https://raw.githubusercontent.com/youoralovedone/bloated_utils/master/<filename>``
+
+bwm coming soon
 
 ## bdc
 bloated discord client
