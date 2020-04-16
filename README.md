@@ -49,7 +49,7 @@ follow the prompts
 
 ## biv
 bloated image viewer
-![bgd](/images/Screen Shot 2020-04-14 at 8.04.08 PM.png)
+![bgd](/images/biv.png)
 
 usage:
 ``python3 biv.py <image name>``
