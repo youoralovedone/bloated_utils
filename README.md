@@ -46,3 +46,13 @@ bloated game downloader
 usage:
 ``python3 bgd.py``
 follow the prompts
+
+## biv
+bloated image viewer
+![bgd](/images/Screen Shot 2020-04-14 at 8.04.08 PM.png)
+
+usage:
+``python3 biv.py <image name>``
+
+## bcp
+bloated communication protocol, http request based messaging! its the backend for bms which is coming soon
