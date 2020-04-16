@@ -1,10 +1,10 @@
-# messages can be sent with any post request formatted as such: {"author":"<author>", "message":"<message>"}
-# member list formatted as: ip,nick,rsa public key
+# messages can be sent with post requests formatted as such: {"author":"<author>", "message":"<message>"}
+# member list formatted as: <local ip>\n<local ip>\n ...
 
-# TODO: exit function closes file
 # TODO: cute curses frontend
+# TODO: commands for post requests
+#   - add member, adds a member to the member list and sends a copy of member list to requested
 # TODO: e2e encryption
-# TODO: fix logging
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
@@ -13,13 +13,14 @@ import json
 import socket
 # make sure the normies pip install these
 import requests
+import sys
 
 ip = socket.gethostbyname(socket.gethostname())
 port = 8000
 name = "<nick>"
 # must create a member list before running
 members = open("members.txt", "r")
-log = open("message_log.txt", "a")
+log = open("message_log.txt", "w+")
 
 class bcpServer(BaseHTTPRequestHandler):
 
@@ -36,8 +37,7 @@ class bcpServer(BaseHTTPRequestHandler):
         self.end_headers()
 
         response = BytesIO()
-
-        log.write("[RECEIVED] AUTHOR " + parsed["author"] + " SENT \"" + parsed["message"] + "\"")
+        log.write("[RECEIVED] AUTHOR " + parsed["author"] + " SENT \"" + parsed["message"] + "\"\n")
 
         print(parsed["author"] + ": " + parsed["message"])
         response.write(b"[SENT] message received by recipient " + name.encode("UTF-8"))
@@ -50,25 +50,31 @@ class bcpServer(BaseHTTPRequestHandler):
 
         return
 
+server_instance = HTTPServer((ip, port), bcpServer)
+
 def send_message():
     while True:
         message = input()
+        if (message == "/exit"):
+            server_instance.shutdown()
+            break
+
         for member in members:
             reply = requests.post(member, json={"author": name, "message": message})
+            log.write(reply.text + "\n")
 
-            log.write(reply.text)
         members.seek(0)
 
 def start_server():
-    server_instance = HTTPServer((ip, port), bcpServer)
     server_instance.serve_forever()
 
 def main():
-
     # threading is absolute magic
     # https://www.shanelynn.ie/using-python-threading-for-multiple-results-queue/
+
     threads = []
     server_process = Thread(target=start_server)
+    server_process.daemon = True
     server_process.start()
     threads.append(server_process)
 
@@ -78,8 +84,8 @@ def main():
 
     for process in  threads:
         process.join()
-    log.close()
 
+    log.close()
 
 if __name__ == "__main__":
     main()
