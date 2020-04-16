@@ -4,7 +4,9 @@
 # TODO: cute curses frontend
 # TODO: commands for post requests
 #   - add member, adds a member to the member list and sends a copy of member list to requested
-# TODO: e2e encryption
+# TODO: easy connect, add member request get on port 9001 on all machines connected to lan
+# TODO: connect generates members.txt
+# TODO: e2e encryption, look into rsa https://ctf101.org/cryptography/what-is-rsa/
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
@@ -13,7 +15,6 @@ import json
 import socket
 # make sure the normies pip install these
 import requests
-import sys
 
 ip = socket.gethostbyname(socket.gethostname())
 port = 8000
