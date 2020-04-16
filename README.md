@@ -51,6 +51,7 @@ follow the prompts
 bloated image viewer
 ![bgd](/images/biv.png)
 
+supports 24 bit colors!
 usage:
 ``python3 biv.py <image name>``
 
