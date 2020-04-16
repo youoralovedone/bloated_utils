@@ -56,4 +56,4 @@ usage:
 ``python3 biv.py <image name>``
 
 ## bcp
-bloated communication protocol, http request based messaging! its the backend for bms which is coming soon
+bloated communication protocol - http request based messaging! its the backend for bms which is coming soon
