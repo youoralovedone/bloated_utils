@@ -7,6 +7,8 @@
 # TODO: easy connect, add member request get on port 9001 on all machines connected to lan
 # TODO: connect generates members.txt
 # TODO: e2e encryption, look into rsa https://ctf101.org/cryptography/what-is-rsa/
+# TODO: encapsulate bcpServer into seperate module
+# TODO: function for commands like send, connect, exit or get ip
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
@@ -17,11 +19,11 @@ import socket
 import requests
 
 ip = socket.gethostbyname(socket.gethostname())
-port = 8000
+port = 9001
 name = "<nick>"
 # must create a member list before running
 members = open("members.txt", "r")
-log = open("message_log.txt", "w+")
+log = open(".NSA_AGENTS_LOOK_HERE.log", "w+")
 
 class bcpServer(BaseHTTPRequestHandler):
 
@@ -56,9 +58,12 @@ server_instance = HTTPServer((ip, port), bcpServer)
 def send_message():
     while True:
         message = input()
-        if (message == "/exit"):
+        if (message == "/EXIT"):
             server_instance.shutdown()
             break
+        if (message == "/IP"):
+            print(ip)
+            continue
 
         for member in members:
             reply = requests.post(member, json={"author": name, "message": message})
@@ -67,6 +72,7 @@ def send_message():
         members.seek(0)
 
 def start_server():
+    print("[OK] server started")
     server_instance.serve_forever()
 
 def main():
