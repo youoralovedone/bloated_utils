@@ -1,6 +1,8 @@
 # bloated_utils
 a collection of shitty utilities i write in study hall
 
+DISCLAIMER: i wrote these when i was 14, pls do not use these as actual tools
+
 installation for any of these tools is as simple as wget-ing the raw!
 
 ``wget https://raw.githubusercontent.com/youoralovedone/bloated_utils/master/<filename>``
